@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,1283" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,5491" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
@@ -79,7 +79,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="376,1218" sap2010:WorkflowViewState.IdRef="Sequence_14">
+  <Sequence sap:VirtualizedContainerService.HintSize="724,5426" sap2010:WorkflowViewState.IdRef="Sequence_14">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intWebCounter" />
       <Variable x:TypeArguments="x:Boolean" Name="BoolWebFirstRow" />
@@ -93,7 +93,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:RetryScope DisplayName="Retry Scope - Open Website" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2" RetryInterval="00:00:20">
+    <ui:RetryScope DisplayName="Retry Scope - Open Website" sap:VirtualizedContainerService.HintSize="682,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2" RetryInterval="00:00:20">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
           <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Jamnagar Hazira Baroda Nagothane – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="666179a9-3372-41af-84c8-c467675275e4" Version="V2" WindowResize="Maximize">
@@ -139,9 +139,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:LogMessage DisplayName="Log Message - Opened URL Successfully" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Opened URL Successfully.&quot;]" />
-    <ui:BuildDataTable DataTable="[DT_CreateNow]" DisplayName="Build Data Table - DT_CreateNow" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;PageNo&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ExtractedValue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Data_x0020_Extracted_x0020_From&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-    <Assign DisplayName="Assign - intWebCounter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <ui:LogMessage DisplayName="Log Message - Opened URL Successfully" sap:VirtualizedContainerService.HintSize="682,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Opened URL Successfully.&quot;]" />
+    <ui:BuildDataTable DataTable="[DT_CreateNow]" DisplayName="Build Data Table - DT_CreateNow" sap:VirtualizedContainerService.HintSize="682,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;PageNo&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;ExtractedValue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Data_x0020_Extracted_x0020_From&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign DisplayName="Assign - intWebCounter" sap:VirtualizedContainerService.HintSize="682,60" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intWebCounter]</OutArgument>
       </Assign.To>
@@ -149,7 +149,7 @@
         <InArgument x:TypeArguments="x:Int32">3</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:UiElementExists DisplayName="Element Exists - BoolWebFirstRow" Exists="[BoolWebFirstRow]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+    <ui:UiElementExists DisplayName="Element Exists - BoolWebFirstRow" Exists="[BoolWebFirstRow]" sap:VirtualizedContainerService.HintSize="682,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d910245-552b-4327-8d98-6f66608caa1c" InformativeScreenshot="ae997b4c54eec428d830945dd86329b6" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='1' tag='P' /&gt;&quot;, intWebCounter)]" TimeoutMS="5000">
           <ui:Target.WaitForReady>
@@ -158,16 +158,16 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[BoolWebFirstRow]" DisplayName="While - Main Data Exists" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[BoolWebFirstRow]" DisplayName="While - Main Data Exists" sap:VirtualizedContainerService.HintSize="682,4259" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Sequence - Main While" sap:VirtualizedContainerService.HintSize="418,1568" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Sequence - Main While" sap:VirtualizedContainerService.HintSize="646,4094" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Sequence - Extracting Values" sap:VirtualizedContainerService.HintSize="376,1230" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Sequence - Extracting Values" sap:VirtualizedContainerService.HintSize="604,3756" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strExtraction" />
               <Variable x:TypeArguments="x:Boolean" Name="BoolTextFound" />
@@ -180,7 +180,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="colName" DisplayName="Get Attribute - Attribute_Of_Date" sap:VirtualizedContainerService.HintSize="334,202" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="colName" DisplayName="Get Attribute - Attribute_Of_Date" sap:VirtualizedContainerService.HintSize="562,202" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
               <ui:GetAttribute.Result>
                 <OutArgument x:TypeArguments="x:String">[Attribute_Of_Date]</OutArgument>
               </ui:GetAttribute.Result>
@@ -195,8 +195,8 @@
                 </ui:Target>
               </ui:GetAttribute.Target>
             </ui:GetAttribute>
-            <ui:LogMessage DisplayName="Log Message - Extracting Values for date" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting Values from &quot; + Attribute_Of_Date + &quot;.pdf&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Particular Value" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message - Extracting Values for date" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extracting Values from &quot; + Attribute_Of_Date + &quot;.pdf&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Particular Value" sap:VirtualizedContainerService.HintSize="562,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -218,7 +218,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <Assign DisplayName="Assign - strDateOfPdf" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign DisplayName="Assign - strDateOfPdf" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_12">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strDateOfPdf]</OutArgument>
               </Assign.To>
@@ -226,7 +226,7 @@
                 <InArgument x:TypeArguments="x:String">[((Attribute_Of_Date.Substring(Attribute_Of_Date.Length-11)).Replace("-",".")).Trim]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Assign - intCounter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Assign - intCounter" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[intcounter]</OutArgument>
               </Assign.To>
@@ -234,7 +234,7 @@
                 <InArgument x:TypeArguments="x:Int32">6</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:UiElementExists DisplayName="Element Table Exists - BoolTableExists" Exists="[BoolTableExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Element Table Exists - BoolTableExists" Exists="[BoolTableExists]" sap:VirtualizedContainerService.HintSize="562,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54317451-c63d-464d-97d2-a045f3dfc5e3" InformativeScreenshot="39a39df5c8190e622186049b61b8a499" Selector="[String.Format(&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin*' title='*{0}.pdf - Google Chrome' /&gt;&lt;ctrl name='*{0}.pdf' role='document' /&gt;&lt;ctrl name='PDF document containing * pages' role='document' /&gt;&lt;ctrl name='Page*{1}' role='pane' /&gt;&lt;ctrl role='grouping' idx='3' /&gt;&quot;, strDateOfPdf, intCounter)]" TimeoutMS="60000">
                   <ui:Target.WaitForReady>
@@ -243,16 +243,16 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[BoolTableExists]" DisplayName="While Table Exists Execute" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[BoolTableExists]" DisplayName="While Table Exists Execute" sap:VirtualizedContainerService.HintSize="562,2577" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName=" Body Table" sap:VirtualizedContainerService.HintSize="376,816" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName=" Body Table" sap:VirtualizedContainerService.HintSize="526,2412" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Text strExtraction" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Text strExtraction" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="583de29e-898d-4bb4-a86c-0d971b2e7ccb" InformativeScreenshot="0b5fd16db239e1eb9a4546152defcdce" Selector="[String.Format(&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin*' title='*{0}.pdf - Google Chrome' /&gt;&lt;ctrl name='*.{0}.pdf' role='document' /&gt;&lt;ctrl name='PDF document containing * pages' role='document' /&gt;&lt;ctrl name='Page*{1}' role='pane' /&gt;&lt;ctrl role='grouping' idx='3' /&gt;&quot;, strDateOfPdf, intCounter)]">
                         <ui:Target.TimeoutMS>
@@ -267,7 +267,7 @@
                       <OutArgument x:TypeArguments="x:String">[strExtraction]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
-                  <If Condition="[string.IsNullOrEmpty(strExtraction)]" DisplayName="If the data is empty" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[string.IsNullOrEmpty(strExtraction)]" DisplayName="If the data is empty" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -298,16 +298,16 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:IsMatch BuilderPattern="H030SG" DisplayName="Is Match H030SG" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[strExtraction]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;H030SG&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="H030SG" RegexOption="IgnoreCase, Compiled" Result="[BoolTextFound]" />
-                  <If Condition="[BoolTextFound And strExtraction.Contains(&quot;MUMBAI&quot;)]" DisplayName="If The Value Exists?" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_2">
+                  <ui:IsMatch BuilderPattern="H030SG" DisplayName="Is Match H030SG" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[strExtraction]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;H030SG&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="H030SG" RegexOption="IgnoreCase, Compiled" Result="[BoolTextFound]" />
+                  <If Condition="[BoolTextFound And strExtraction.Contains(&quot;MUMBAI&quot;)]" DisplayName="If The Value Exists?" sap:VirtualizedContainerService.HintSize="484,1647" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Sequence - If Value Exists" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence DisplayName="Sequence - If Value Exists" sap:VirtualizedContainerService.HintSize="376,1461" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd:DataTable" Name="DT_Mumbai_extraxted_Data" />
                           <Variable x:TypeArguments="x:String" Name="strListFirstLine" />
@@ -319,7 +319,7 @@
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -407,7 +407,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:AddDataRow>
-                        <ui:LogMessage DisplayName="Log Message - Added The Value to Data" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;The Final Value Extracted and added to Data.&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message - Added The Value to Data" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;The Final Value Extracted and added to Data.&quot;+Environment.NewLine+&#xD;&#xA;&quot;-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x&quot;]" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
@@ -420,7 +420,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
@@ -438,7 +438,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <Assign DisplayName="Assign intCounter + 1" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="Assign intCounter + 1" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[intcounter]</OutArgument>
                     </Assign.To>
@@ -446,7 +446,7 @@
                       <InArgument x:TypeArguments="x:Int32">[intcounter+1]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:UiElementExists DisplayName="Element Table Exists - boolTableExists" Exists="[BoolTableExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists DisplayName="Element Table Exists - boolTableExists" Exists="[BoolTableExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54317451-c63d-464d-97d2-a045f3dfc5e3" InformativeScreenshot="5618b42ef6f414c1f491be580a8e2000" Selector="[String.Format(&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin*' title='*{0}.pdf - Google Chrome' /&gt;&lt;ctrl name='*.{0}.pdf' role='document' /&gt;&lt;ctrl name='PDF document containing * pages' role='document' /&gt;&lt;ctrl name='Page*{1}' role='pane' /&gt;&lt;ctrl role='grouping' idx='3' /&gt;&quot;, strDateOfPdf, intCounter)]" TimeoutMS="5000">
                         <ui:Target.WaitForReady>
@@ -459,12 +459,12 @@
               </ui:InterruptibleWhile.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InterruptibleWhile>
-            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: PP-PRICE-DT.01.05.2021.pdf" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="56babec2-6623-4777-b8d3-7abb2de8d2e3" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: PP-PRICE-DT.01.05.2021.pdf" sap:VirtualizedContainerService.HintSize="562,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="56babec2-6623-4777-b8d3-7abb2de8d2e3" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -482,9 +482,9 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NApplicationCard>
-            <ui:LogMessage DisplayName="Log Message - Extracting Values for date" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Extracted Values from &quot; + Attribute_Of_Date + &quot;.pdf and closed the window.&quot;]" />
+            <ui:LogMessage DisplayName="Log Message - Extracting Values for date" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Extracted Values from &quot; + Attribute_Of_Date + &quot;.pdf and closed the window.&quot;+Environment.NewLine+&#xD;&#xA;&quot;----------------xxxxxxxxxxxxxxxxx---------------------------xxxxxxxxxxxxxxxxxxx-------------------------&quot;]" />
           </Sequence>
-          <Assign DisplayName="Assign - intWebCounter+1" sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+          <Assign DisplayName="Assign - intWebCounter+1" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_11">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[intWebCounter]</OutArgument>
             </Assign.To>
@@ -492,7 +492,7 @@
               <InArgument x:TypeArguments="x:Int32">[intWebCounter+1]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:UiElementExists DisplayName="Element Exists - BoolWebFirstRow" Exists="[BoolWebFirstRow]" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+          <ui:UiElementExists DisplayName="Element Exists - BoolWebFirstRow" Exists="[BoolWebFirstRow]" sap:VirtualizedContainerService.HintSize="604,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d910245-552b-4327-8d98-6f66608caa1c" InformativeScreenshot="ae997b4c54eec428d830945dd86329b6" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='1' tag='P' /&gt;&quot;, intWebCounter)]" TimeoutMS="5000">
                 <ui:Target.WaitForReady>
@@ -505,14 +505,14 @@
       </ui:InterruptibleWhile.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleWhile>
-    <ui:LogMessage DisplayName="Log Message - No More PDF found hence execution ended" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;No more pdf found hence execution ended.&quot;]" />
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[DT_CreateNow]" DisplayName="Write Range - DT_CreateNow" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" WorkbookPath="Data/Output.xlsx" />
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Jamnagar Hazira Baroda Nagothane – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="0e289b4f-8afb-4cca-b6cf-e0ff28b2d928" Version="V2" WindowResize="Maximize">
+    <ui:LogMessage DisplayName="Log Message - No More PDF found hence execution ended" sap:VirtualizedContainerService.HintSize="682,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;No more pdf found hence execution ended.&quot;]" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[DT_CreateNow]" DisplayName="Write Range - DT_CreateNow" sap:VirtualizedContainerService.HintSize="682,115" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" WorkbookPath="Data/Output.xlsx" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Jamnagar Hazira Baroda Nagothane – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="682,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="0e289b4f-8afb-4cca-b6cf-e0ff28b2d928" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -530,6 +530,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message - All Data Extracted Application Also closed successfully" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;All Data Extracted Application Also closed successfully&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - All Data Extracted Application Also closed successfully" sap:VirtualizedContainerService.HintSize="682,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;All Data Extracted Application Also closed successfully&quot;]" />
   </Sequence>
 </Activity>
