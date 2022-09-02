@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Flowchart_Download_pdf" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1174,701" sap2010:WorkflowViewState.IdRef="Flowchart_Download_pdf_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Flowchart_Download_pdf" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1314,701" sap2010:WorkflowViewState.IdRef="Flowchart_Download_pdf_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
@@ -74,45 +74,49 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Flowchart_Download_pdf - For Relene Data" sap:VirtualizedContainerService.HintSize="1184,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart_Download_pdf - For Relene Data" sap:VirtualizedContainerService.HintSize="1215,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intCounter" />
       <Variable x:TypeArguments="x:Boolean" Name="BoolPdfExists" />
       <Variable x:TypeArguments="x:String" Name="strPDF_Name" />
       <Variable x:TypeArguments="x:String" Name="strURLName" />
+      <Variable x:TypeArguments="x:String" Name="strReleneURL" />
+      <Variable x:TypeArguments="x:String" Name="strDownloadPath" />
+      <Variable x:TypeArguments="x:String" Name="strMovedownloadedFilePath" />
+      <Variable x:TypeArguments="x:String" Name="strJamnagarURL" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">10,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">70,40 120,40</av:PointCollection>
-        <x:Double x:Key="Width">1150</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">40,77.5 40,107.5 100,107.5 100,134.5</av:PointCollection>
+        <x:Double x:Key="Width">1181</x:Double>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID16</x:Reference>
+      <x:Reference>__ReferenceID19</x:Reference>
     </Flowchart.StartNode>
     <FlowDecision x:Name="__ReferenceID0" Condition="[BoolPdfExists]" DisplayName="PDF Avail?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <av:Point x:Key="ShapeLocation">220.5,136.5</av:Point>
+          <av:Point x:Key="ShapeLocation">220.5,196.5</av:Point>
           <av:Size x:Key="ShapeSize">70,87</av:Size>
           <x:String x:Key="FalseLabel">Not Available</x:String>
           <x:String x:Key="TrueLabel">Available</x:String>
-          <av:PointCollection x:Key="TrueConnector">220.5,180 100,180 100,254.5</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">290.5,180 400,180 400,244.5</av:PointCollection>
+          <av:PointCollection x:Key="TrueConnector">220.5,240 100,240 100,304.5</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">290.5,240 400,240 400,304.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
         <FlowStep x:Name="__ReferenceID3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">0,254.5</av:Point>
+              <av:Point x:Key="ShapeLocation">0,304.5</av:Point>
               <av:Size x:Key="ShapeSize">200,51</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">100,305.5 100,355.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">100,355.5 100,395.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Pdf File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
@@ -146,9 +150,9 @@
             <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">0,355.5</av:Point>
+                  <av:Point x:Key="ShapeLocation">0,395.5</av:Point>
                   <av:Size x:Key="ShapeSize">200,66</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">100,421.5 100,471.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">100,461.5 100,521.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Sequence sap2010:Annotation.AnnotationText="Download File and Move it to Project Input Folder" DisplayName="Sequence - Download File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -186,7 +190,7 @@
                     <InArgument x:TypeArguments="x:String">[Right(strPDF_Name.replace("-","."),11).Trim]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:GetLastDownloadedFile IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for PDF Download" DownloadFolder="C:\Users\Gaura\Downloads" File="[fileInfDownPdf]" sap:VirtualizedContainerService.HintSize="434,639" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+                <ui:GetLastDownloadedFile IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for PDF Download" DownloadFolder="[strDownloadPath]" File="[fileInfDownPdf]" sap:VirtualizedContainerService.HintSize="434,599" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
                   <ui:GetLastDownloadedFile.Body>
                     <ActivityAction>
                       <Sequence DisplayName="Sequence - Downloading File" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -196,7 +200,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Download Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="3000" DisplayName="Click - Download Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -252,7 +256,7 @@
                     <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">C:\Users\Gaura\Downloads</InArgument>
+                    <InArgument x:TypeArguments="x:String">[strDownloadPath]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <Assign DisplayName="Assign - strFilename" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_5">
@@ -277,7 +281,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:CopyFile ContinueOnError="{x:Null}" Destination="C:\Users\gaura\Documents\UiPath\2nd tasks\Input" DisplayName="Copy File - Copy Downloaded File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[strFilename]">
+                      <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strMovedownloadedFilePath]" DisplayName="Copy File - Copy Downloaded File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[strFilename]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -299,7 +303,7 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: PE-PRICE-DT.01.08.2022.pdf" sap:VirtualizedContainerService.HintSize="434,181" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="4e30af57-d270-4e94-a56a-0e252705e51a" Version="V2">
+                <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: PE-PRICE-DT.01.08.2022.pdf" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="4e30af57-d270-4e94-a56a-0e252705e51a" Version="V2">
                   <uix:NApplicationCard.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
@@ -312,27 +316,19 @@
                   </uix:NApplicationCard.TargetApp>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NApplicationCard>
-                <Assign DisplayName="Assign - strURLName" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_11">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">[strURLName]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">https://resindistributors.com/relene-pe-lldpe-hdpe-ldpe/</InArgument>
-                  </Assign.Value>
-                </Assign>
               </Sequence>
               <FlowStep.Next>
                 <FlowStep x:Name="__ReferenceID11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">0,471.5</av:Point>
+                      <av:Point x:Key="ShapeLocation">0,521.5</av:Point>
                       <av:Size x:Key="ShapeSize">200,66</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">200,504.5 255.5,504.5 255.5,223.5</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">200,554.5 255.5,554.5 255.5,283.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Sequence DisplayName="Sequence - Counter Upgrade" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -382,9 +378,9 @@
         <FlowStep x:Name="__ReferenceID6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">300,244.5</av:Point>
+              <av:Point x:Key="ShapeLocation">300,304.5</av:Point>
               <av:Size x:Key="ShapeSize">200,51</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">400,295.5 400,334.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">400,355.5 400,404.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: RELENE PE – LLDPE / HDPE / LDPE – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="666179a9-3372-41af-84c8-c467675275e4" Version="V2" WindowResize="Maximize">
@@ -396,7 +392,7 @@
               </ActivityAction>
             </uix:NApplicationCard.Body>
             <uix:NApplicationCard.TargetApp>
-              <uix:TargetApp Area="-8, -8, 1456, 876" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="c2026058df9481ab2d7a549dba35a51e.png" Selector="&lt;html app='chrome.exe' title='RELENE PE – LLDPE / HDPE / LDPE – Resin Agency Llp' /&gt;" Url="https://resindistributors.com/relene-pe-lldpe-hdpe-ldpe/" />
+              <uix:TargetApp Area="-8, -8, 1456, 876" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="c2026058df9481ab2d7a549dba35a51e.png" Selector="&lt;html app='chrome.exe' title='RELENE PE – LLDPE / HDPE / LDPE – Resin Agency Llp' /&gt;" Url="[strReleneURL]" />
             </uix:NApplicationCard.TargetApp>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -409,9 +405,9 @@
             <FlowStep x:Name="__ReferenceID5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">300,334.5</av:Point>
+                  <av:Point x:Key="ShapeLocation">300,404.5</av:Point>
                   <av:Size x:Key="ShapeSize">200,51</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">500,360 620,360 620,225.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">400,455.5 400,500</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message - Downloaded All File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Downloaded All File From Web and moved to input file.&quot;]">
@@ -422,457 +418,497 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID2">
+                <FlowStep x:Name="__ReferenceID17">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">520,174.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">620,174.5 620,144.5 615.641666666667,144.5 615.641666666667,124.5</av:PointCollection>
+                      <av:Point x:Key="ShapeLocation">269,500</av:Point>
+                      <av:Size x:Key="ShapeSize">262,60</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">531,530 620,530 620,255.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Read and Extract workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Read and Extract.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_strPdfName">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPDF_Name" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_strURLName">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strURLName" />
-                      </InArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
+                  <Assign DisplayName="Assign - strURLName" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strURLName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[strReleneURL]</InArgument>
+                    </Assign.Value>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:InvokeWorkflowFile>
+                  </Assign>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID14" DisplayName="URL Equals" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                      <FlowDecision.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="strURLName.Equals(&quot;https://resindistributors.spsipl.co.in/jamnagar-hazira-baroda-nagothane/&quot;)" />
-                      </FlowDecision.Condition>
+                    <FlowStep x:Name="__ReferenceID2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <av:Point x:Key="ShapeLocation">580.641666666667,37.5</av:Point>
-                          <av:Size x:Key="ShapeSize">70,87</av:Size>
-                          <av:PointCollection x:Key="FalseConnector">650.641666666667,81 680.641666666667,81 680.641666666667,40 790,40</av:PointCollection>
-                          <av:PointCollection x:Key="TrueConnector">580.641666666667,81 460.641666666667,81 460.641666666667,51</av:PointCollection>
+                          <av:Point x:Key="ShapeLocation">520,204.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">620,204.5 620,174.5 615.641666666667,174.5 615.641666666667,124.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <FlowDecision.True>
-                        <FlowStep x:Name="__ReferenceID15">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Read and Extract workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Read and Extract.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strPdfName">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPDF_Name" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strURLName">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strURLName" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strMovedownloadedFilePath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strMovedownloadedFilePath" />
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <FlowStep.Next>
+                        <FlowDecision x:Name="__ReferenceID14" Condition="[strURLName.Equals(&quot;https://resindistributors.com/jamnagar-hazira-baroda-nagothane/&quot;)]" DisplayName="URL Equals" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">360.641666666667,0</av:Point>
-                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">580.641666666667,37.5</av:Point>
+                              <av:Size x:Key="ShapeSize">70,87</av:Size>
+                              <av:PointCollection x:Key="FalseConnector">650.641666666667,81 680.641666666667,81 680.641666666667,40 790,40</av:PointCollection>
+                              <av:PointCollection x:Key="TrueConnector">580.641666666667,81 460.641666666667,81 460.641666666667,130</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message - Activity Completed" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Activity Completed&quot;]">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
-                        </FlowStep>
-                      </FlowDecision.True>
-                      <FlowDecision.False>
-                        <FlowStep x:Name="__ReferenceID12">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">790,7</av:Point>
-                              <av:Size x:Key="ShapeSize">200,66</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">890,73 890,103 900,103 900,116.5</av:PointCollection>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Sequence - Initialization Jamnagar Product" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Jamnagar Hazira Baroda Nagothane – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="434,271" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="666179a9-3372-41af-84c8-c467675275e4" Version="V2" WindowResize="Maximize">
-                              <uix:NApplicationCard.Body>
-                                <ActivityAction x:TypeArguments="x:Object">
-                                  <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                  </ActivityAction.Argument>
-                                </ActivityAction>
-                              </uix:NApplicationCard.Body>
-                              <uix:NApplicationCard.TargetApp>
-                                <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="291b43332571eb11f853105ce05aba9d.png" Selector="&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;" Url="https://resindistributors.spsipl.co.in/jamnagar-hazira-baroda-nagothane/" />
-                              </uix:NApplicationCard.TargetApp>
+                          <FlowDecision.True>
+                            <FlowStep x:Name="__ReferenceID15">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">360.641666666667,130</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                            </uix:NApplicationCard>
-                            <Assign DisplayName="Assign - intCounter" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_15">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Int32">3</InArgument>
-                              </Assign.Value>
+                              <ui:LogMessage DisplayName="Log Message - Activity Completed" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Activity Completed&quot;]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:LogMessage>
+                            </FlowStep>
+                          </FlowDecision.True>
+                          <FlowDecision.False>
+                            <FlowStep x:Name="__ReferenceID12">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">790,7</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">890,73 890,103 900,103 900,116.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                            </Assign>
-                            <ui:UiElementExists DisplayName="Element Exists - BoolWebFirstRow" Exists="[BoolPdfExists]" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
-                              <ui:UiElementExists.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d910245-552b-4327-8d98-6f66608caa1c" InformativeScreenshot="ae997b4c54eec428d830945dd86329b6" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='1' tag='P' /&gt;&quot;, intCounter)]" TimeoutMS="5000">
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:UiElementExists.Target>
-                            </ui:UiElementExists>
-                          </Sequence>
-                          <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID1" Condition="[BoolPdfExists]" DisplayName="PDF Avail?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <av:Point x:Key="ShapeLocation">865,116.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                  <x:String x:Key="FalseLabel">Not Available</x:String>
-                                  <x:String x:Key="TrueLabel">Available</x:String>
-                                  <av:PointCollection x:Key="TrueConnector">865,160 800,160 800,264.5</av:PointCollection>
-                                  <av:PointCollection x:Key="FalseConnector">935,160 1050,160 1050,264.5</av:PointCollection>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID7">
+                              <Sequence DisplayName="Sequence - Initialization Jamnagar Product" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Jamnagar Hazira Baroda Nagothane – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="434,231" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="666179a9-3372-41af-84c8-c467675275e4" Version="V2" WindowResize="Maximize">
+                                  <uix:NApplicationCard.Body>
+                                    <ActivityAction x:TypeArguments="x:Object">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                      </ActivityAction.Argument>
+                                    </ActivityAction>
+                                  </uix:NApplicationCard.Body>
+                                  <uix:NApplicationCard.TargetApp>
+                                    <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="291b43332571eb11f853105ce05aba9d.png" Selector="&lt;html app='chrome.exe' url='https://resindistributors.com/jamnagar-hazira-baroda-nagothane/' /&gt;" Url="[strJamnagarURL]" />
+                                  </uix:NApplicationCard.TargetApp>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">700,264.5</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">800,315.5 800,365.5</av:PointCollection>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Pdf File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                    <ui:Click.CursorPosition>
-                                      <ui:CursorPosition Position="Center">
-                                        <ui:CursorPosition.OffsetX>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:CursorPosition.OffsetX>
-                                        <ui:CursorPosition.OffsetY>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:CursorPosition.OffsetY>
-                                      </ui:CursorPosition>
-                                    </ui:Click.CursorPosition>
-                                    <ui:Click.Target>
-                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4cf68a06-b028-4905-9aad-a012c202dd75" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='1' tag='P' /&gt;&quot;, intCounter)]">
-                                        <ui:Target.TimeoutMS>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:Target.TimeoutMS>
-                                        <ui:Target.WaitForReady>
-                                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                                        </ui:Target.WaitForReady>
-                                      </ui:Target>
-                                    </ui:Click.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:Click>
-                                  <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID8">
+                                </uix:NApplicationCard>
+                                <Assign DisplayName="Assign - intCounter" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                                <ui:UiElementExists DisplayName="Element Exists - BoolWebFirstRow" Exists="[BoolPdfExists]" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d910245-552b-4327-8d98-6f66608caa1c" InformativeScreenshot="ae997b4c54eec428d830945dd86329b6" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='2' tag='P' /&gt;&quot;, intCounter)]" TimeoutMS="5000">
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                              </Sequence>
+                              <FlowStep.Next>
+                                <FlowDecision x:Name="__ReferenceID1" Condition="[BoolPdfExists]" DisplayName="PDF Avail?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">865,116.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                      <x:String x:Key="FalseLabel">Not Available</x:String>
+                                      <x:String x:Key="TrueLabel">Available</x:String>
+                                      <av:PointCollection x:Key="TrueConnector">865,160 800,160 800,264.5</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">935,160 1050,160 1050,264.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID7">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">700,365.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">800,431.5 800,477</av:PointCollection>
+                                          <av:Point x:Key="ShapeLocation">700,264.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">800,315.5 800,365.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Sequence - Download File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                        <Sequence.Variables>
-                                          <Variable x:TypeArguments="x:String" Name="strPDF_Name" />
-                                          <Variable x:TypeArguments="x:String" Name="strFolderPath" />
-                                          <Variable x:TypeArguments="x:String" Name="strFilename" />
-                                        </Sequence.Variables>
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Pdf File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click.CursorPosition>
+                                          <ui:CursorPosition Position="Center">
+                                            <ui:CursorPosition.OffsetX>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetX>
+                                            <ui:CursorPosition.OffsetY>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:CursorPosition.OffsetY>
+                                          </ui:CursorPosition>
+                                        </ui:Click.CursorPosition>
+                                        <ui:Click.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4cf68a06-b028-4905-9aad-a012c202dd75" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl innertext='w.e.f.*-08-2022' tableCol='{0}' tableRow='2' tag='P' /&gt;&quot;, intCounter)]">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:Click.Target>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="colName" DisplayName="Get Attribute 'Inner Text for Pdf File'" sap:VirtualizedContainerService.HintSize="434,202" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
-                                          <ui:GetAttribute.Result>
-                                            <OutArgument x:TypeArguments="x:String">[strPDF_Name]</OutArgument>
-                                          </ui:GetAttribute.Result>
-                                          <ui:GetAttribute.Target>
-                                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3620409d-7acf-49f9-a18b-024c0078b90c" InformativeScreenshot="00cd7d8a41d2311d0ccb3d7460fb35d3" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='1' tag='P' /&gt;&quot;, intCounter)]">
-                                              <ui:Target.TimeoutMS>
-                                                <InArgument x:TypeArguments="x:Int32" />
-                                              </ui:Target.TimeoutMS>
-                                              <ui:Target.WaitForReady>
-                                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                                              </ui:Target.WaitForReady>
-                                            </ui:Target>
-                                          </ui:GetAttribute.Target>
-                                        </ui:GetAttribute>
-                                        <Assign DisplayName="Assign - Replace - with ." sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[strPDF_Name]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">[Right(strPDF_Name.replace("-","."),11).Trim]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <ui:GetLastDownloadedFile File="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for PDF Download" DownloadFolder="C:\Users\Gaura\Downloads" sap:VirtualizedContainerService.HintSize="434,599" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2">
-                                          <ui:GetLastDownloadedFile.Body>
-                                            <ActivityAction>
-                                              <Sequence DisplayName="Sequence - Downloading File" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Download Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                                  <ui:Click.CursorPosition>
-                                                    <ui:CursorPosition Position="Center">
-                                                      <ui:CursorPosition.OffsetX>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetX>
-                                                      <ui:CursorPosition.OffsetY>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetY>
-                                                    </ui:CursorPosition>
-                                                  </ui:Click.CursorPosition>
-                                                  <ui:Click.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6cb28900-06f5-403a-90dc-1690e834c248" InformativeScreenshot="fb93b5de30d4cd64932e9dd322e059e1" Selector="[String.Format(&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*{0}.pdf - Google Chrome' /&gt;&lt;ctrl name='*{0}.pdf' role='document' /&gt;&lt;ctrl name='Download' role='push button' /&gt;&lt;ctrl role='grouping' /&gt;&quot;, strPDF_Name)]" WaitForReady="COMPLETE">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                    </ui:Target>
-                                                  </ui:Click.Target>
-                                                </ui:Click>
-                                                <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="3000" DisplayName="Click 'Button Save'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                                  <ui:Click.CursorPosition>
-                                                    <ui:CursorPosition Position="Center">
-                                                      <ui:CursorPosition.OffsetX>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetX>
-                                                      <ui:CursorPosition.OffsetY>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:CursorPosition.OffsetY>
-                                                    </ui:CursorPosition>
-                                                  </ui:Click.CursorPosition>
-                                                  <ui:Click.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d272b3cb-8dc9-4f27-9f2d-91320eac44ca" InformativeScreenshot="c6baeeda4682ca5500a9856ab68f42a1" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;">
-                                                      <ui:Target.TimeoutMS>
-                                                        <InArgument x:TypeArguments="x:Int32" />
-                                                      </ui:Target.TimeoutMS>
-                                                      <ui:Target.WaitForReady>
-                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                      </ui:Target.WaitForReady>
-                                                    </ui:Target>
-                                                  </ui:Click.Target>
-                                                </ui:Click>
-                                              </Sequence>
-                                            </ActivityAction>
-                                          </ui:GetLastDownloadedFile.Body>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </ui:GetLastDownloadedFile>
-                                        <Assign DisplayName="Assign - strFolderPath" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_8">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">C:\Users\Gaura\Downloads</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <Assign DisplayName="Assign - strFilename" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_9">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[strFilename]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">[String.Join("",Directory.GetFiles(strFolderPath,"*").OrderByDescending(Function(d) New FileInfo(d).CreationTime).Take(1))]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <If Condition="[strFilename.Contains(&quot;.pdf&quot;)]" DisplayName="If - File Contains Pdf File" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="If_2">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <If.Then>
-                                            <Sequence DisplayName="Sequence - Contains Pdf" sap:VirtualizedContainerService.HintSize="476,368" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:CopyFile ContinueOnError="{x:Null}" Destination="C:\Users\gaura\Documents\UiPath\2nd tasks\Input" DisplayName="Copy File - Copy Downloaded File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[strFilename]">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </ui:CopyFile>
-                                              <ui:DeleteFileX DisplayName="Delete File - Current Downloadaed File" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[strFilename]" />
-                                            </Sequence>
-                                          </If.Then>
-                                          <If.Else>
-                                            <Sequence DisplayName="Sequence - Doesnot contains pdf" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message - Doesnt contains Pdf" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;No File transfered for &quot; + strPDF_Name]" />
-                                            </Sequence>
-                                          </If.Else>
-                                        </If>
-                                        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: PP-PRICE-DT.01.05.2021.pdf" sap:VirtualizedContainerService.HintSize="434,181" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="56babec2-6623-4777-b8d3-7abb2de8d2e3" Version="V2" WindowResize="Maximize">
-                                          <uix:NApplicationCard.Body>
-                                            <ActivityAction x:TypeArguments="x:Object">
-                                              <ActivityAction.Argument>
-                                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                              </ActivityAction.Argument>
-                                            </ActivityAction>
-                                          </uix:NApplicationCard.Body>
-                                          <uix:NApplicationCard.TargetApp>
-                                            <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="883e8962f691ed7b7756331a747266c8.png" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='*{0}.pdf' /&gt;&quot;, strPDF_Name)]" Url="[&quot;https://resindistributors.spsipl.co.in/wp-content/uploads/&quot;+Right(strPDF_Name,4)+&quot;/&quot;+strPDF_Name.Substring(3,2)+&quot;/PP-PRICE-DT.&quot;+strPDF_Name+&quot;.pdf&quot;]" />
-                                          </uix:NApplicationCard.TargetApp>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </uix:NApplicationCard>
-                                        <Assign DisplayName="Assign - strURLName" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_12">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[strURLName]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">https://resindistributors.spsipl.co.in/jamnagar-hazira-baroda-nagothane/</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                      </Sequence>
+                                      </ui:Click>
                                       <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID13">
+                                        <FlowStep x:Name="__ReferenceID8">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">700,477</av:Point>
+                                              <av:Point x:Key="ShapeLocation">700,365.5</av:Point>
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">900,510 930,510 930,233.5 900,233.5 900,203.5</av:PointCollection>
+                                              <av:PointCollection x:Key="ConnectorLocation">800,431.5 800,477</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Sequence - Counter Upgrade" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                          <Sequence DisplayName="Sequence - Download File" sap:VirtualizedContainerService.HintSize="939,2020" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:String" Name="strPDF_Name" />
+                                              <Variable x:TypeArguments="x:String" Name="strFolderPath" />
+                                              <Variable x:TypeArguments="x:String" Name="strFilename" />
+                                            </Sequence.Variables>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Assign DisplayName="Assign - intCounter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
-                                              </Assign.Value>
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </Assign>
-                                            <ui:UiElementExists DisplayName="Element Exists - BoolPdfExists" Exists="[BoolPdfExists]" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
-                                              <ui:UiElementExists.Target>
-                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f6d4c85-7717-4c2a-9453-633f58ec103d" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='1' tag='P' /&gt;&quot;, intCounter)]" TimeoutMS="5000">
+                                            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="innerText" DisplayName="Get Attribute 'Inner Text for Pdf File'" sap:VirtualizedContainerService.HintSize="897,202" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                                              <ui:GetAttribute.Result>
+                                                <OutArgument x:TypeArguments="x:String">[strPDF_Name]</OutArgument>
+                                              </ui:GetAttribute.Result>
+                                              <ui:GetAttribute.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3620409d-7acf-49f9-a18b-024c0078b90c" InformativeScreenshot="00cd7d8a41d2311d0ccb3d7460fb35d3" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='2' tag='TD' /&gt;&quot;, intCounter)]">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
                                                   <ui:Target.WaitForReady>
                                                     <InArgument x:TypeArguments="ui:WaitForReady" />
                                                   </ui:Target.WaitForReady>
                                                 </ui:Target>
-                                              </ui:UiElementExists.Target>
+                                              </ui:GetAttribute.Target>
+                                            </ui:GetAttribute>
+                                            <Assign DisplayName="Assign - Replace - with ." sap:VirtualizedContainerService.HintSize="897,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[strPDF_Name]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[Right(strPDF_Name.replace("-","."),11).Trim]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <ui:GetLastDownloadedFile File="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for PDF Download" DownloadFolder="[strDownloadPath]" sap:VirtualizedContainerService.HintSize="897,599" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2">
+                                              <ui:GetLastDownloadedFile.Body>
+                                                <ActivityAction>
+                                                  <Sequence DisplayName="Sequence - Downloading File" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="3000" DisplayName="Click - Download Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                      <ui:Click.CursorPosition>
+                                                        <ui:CursorPosition Position="Center">
+                                                          <ui:CursorPosition.OffsetX>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:CursorPosition.OffsetX>
+                                                          <ui:CursorPosition.OffsetY>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:CursorPosition.OffsetY>
+                                                        </ui:CursorPosition>
+                                                      </ui:Click.CursorPosition>
+                                                      <ui:Click.Target>
+                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6cb28900-06f5-403a-90dc-1690e834c248" InformativeScreenshot="fb93b5de30d4cd64932e9dd322e059e1" Selector="[String.Format(&quot;&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*{0}.pdf - Google Chrome' /&gt;&lt;ctrl name='*{0}.pdf' role='document' /&gt;&lt;ctrl name='Download' role='push button' /&gt;&lt;ctrl role='grouping' /&gt;&quot;, strPDF_Name)]" WaitForReady="COMPLETE">
+                                                          <ui:Target.TimeoutMS>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:Target.TimeoutMS>
+                                                        </ui:Target>
+                                                      </ui:Click.Target>
+                                                    </ui:Click>
+                                                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="3000" DisplayName="Click 'Button Save'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                                      <ui:Click.CursorPosition>
+                                                        <ui:CursorPosition Position="Center">
+                                                          <ui:CursorPosition.OffsetX>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:CursorPosition.OffsetX>
+                                                          <ui:CursorPosition.OffsetY>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:CursorPosition.OffsetY>
+                                                        </ui:CursorPosition>
+                                                      </ui:Click.CursorPosition>
+                                                      <ui:Click.Target>
+                                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d272b3cb-8dc9-4f27-9f2d-91320eac44ca" InformativeScreenshot="c6baeeda4682ca5500a9856ab68f42a1" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;">
+                                                          <ui:Target.TimeoutMS>
+                                                            <InArgument x:TypeArguments="x:Int32" />
+                                                          </ui:Target.TimeoutMS>
+                                                          <ui:Target.WaitForReady>
+                                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                          </ui:Target.WaitForReady>
+                                                        </ui:Target>
+                                                      </ui:Click.Target>
+                                                    </ui:Click>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:GetLastDownloadedFile.Body>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                            </ui:UiElementExists>
+                                            </ui:GetLastDownloadedFile>
+                                            <Assign DisplayName="Assign - strFolderPath" sap:VirtualizedContainerService.HintSize="897,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[strDownloadPath]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign DisplayName="Assign - strFilename" sap:VirtualizedContainerService.HintSize="897,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[strFilename]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[String.Join("",Directory.GetFiles(strFolderPath,"*").OrderByDescending(Function(d) New FileInfo(d).CreationTime).Take(1))]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <If Condition="[strFilename.Contains(&quot;.pdf&quot;)]" DisplayName="If - File Contains Pdf File" sap:VirtualizedContainerService.HintSize="897,526" sap2010:WorkflowViewState.IdRef="If_2">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If.Then>
+                                                <Sequence DisplayName="Sequence - Contains Pdf" sap:VirtualizedContainerService.HintSize="476,368" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:CopyFile ContinueOnError="{x:Null}" Destination="[strMovedownloadedFilePath]" DisplayName="Copy File - Copy Downloaded File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[strFilename]">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:CopyFile>
+                                                  <ui:DeleteFileX DisplayName="Delete File - Current Downloadaed File" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[strFilename]" />
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence DisplayName="Sequence - Doesnot contains pdf" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Log Message - Doesnt contains Pdf" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;No File transfered for &quot; + strPDF_Name]" />
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: PP-PRICE-DT.01.05.2021.pdf" sap:VirtualizedContainerService.HintSize="897,181" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="56babec2-6623-4777-b8d3-7abb2de8d2e3" Version="V2" WindowResize="Maximize">
+                                              <uix:NApplicationCard.Body>
+                                                <ActivityAction x:TypeArguments="x:Object">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                  </ActivityAction.Argument>
+                                                </ActivityAction>
+                                              </uix:NApplicationCard.Body>
+                                              <uix:NApplicationCard.TargetApp>
+                                                <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="883e8962f691ed7b7756331a747266c8.png" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='*{0}.pdf' /&gt;&quot;, strPDF_Name)]" Url="[&quot;https://resindistributors.spsipl.co.in/wp-content/uploads/&quot;+Right(strPDF_Name,4)+&quot;/&quot;+strPDF_Name.Substring(3,2)+&quot;/PP-PRICE-DT.&quot;+strPDF_Name+&quot;.pdf&quot;]" />
+                                              </uix:NApplicationCard.TargetApp>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uix:NApplicationCard>
                                           </Sequence>
                                           <FlowStep.Next>
-                                            <x:Reference>__ReferenceID1</x:Reference>
+                                            <FlowStep x:Name="__ReferenceID13">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">700,477</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">900,510 930,510 930,233.5 900,233.5 900,203.5</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Sequence DisplayName="Sequence - Counter Upgrade" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign DisplayName="Assign - intCounter" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Int32">[intCounter]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Int32">[intCounter+1]</InArgument>
+                                                  </Assign.Value>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </Assign>
+                                                <ui:UiElementExists DisplayName="Element Exists - BoolPdfExists" Exists="[BoolPdfExists]" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="UiElementExists_8">
+                                                  <ui:UiElementExists.Target>
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f6d4c85-7717-4c2a-9453-633f58ec103d" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='{0}' tableRow='2' tag='P' /&gt;&quot;, intCounter)]" TimeoutMS="5000">
+                                                      <ui:Target.WaitForReady>
+                                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                      </ui:Target.WaitForReady>
+                                                    </ui:Target>
+                                                  </ui:UiElementExists.Target>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:UiElementExists>
+                                              </Sequence>
+                                              <FlowStep.Next>
+                                                <x:Reference>__ReferenceID1</x:Reference>
+                                              </FlowStep.Next>
+                                            </FlowStep>
                                           </FlowStep.Next>
                                         </FlowStep>
                                       </FlowStep.Next>
                                     </FlowStep>
-                                  </FlowStep.Next>
-                                </FlowStep>
-                              </FlowDecision.True>
-                              <FlowDecision.False>
-                                <FlowStep x:Name="__ReferenceID9">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">950,264.5</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">1050,315.5 1050,365.5</av:PointCollection>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Jamnagar Hazira Baroda Nagothane – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="666179a9-3372-41af-84c8-c467675275e4" Version="V2" WindowResize="Maximize">
-                                    <uix:NApplicationCard.Body>
-                                      <ActivityAction x:TypeArguments="x:Object">
-                                        <ActivityAction.Argument>
-                                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                        </ActivityAction.Argument>
-                                      </ActivityAction>
-                                    </uix:NApplicationCard.Body>
-                                    <uix:NApplicationCard.TargetApp>
-                                      <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="291b43332571eb11f853105ce05aba9d.png" Selector="&lt;html app='chrome.exe' title='Jamnagar Hazira Baroda Nagothane – Resin Agency Llp' /&gt;" Url="https://resindistributors.spsipl.co.in/jamnagar-hazira-baroda-nagothane/" />
-                                    </uix:NApplicationCard.TargetApp>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </uix:NApplicationCard>
-                                  <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID10">
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowStep x:Name="__ReferenceID9">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">950,365.5</av:Point>
+                                          <av:Point x:Key="ShapeLocation">950,264.5</av:Point>
                                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">1050,416.5 1050,446.5 620,446.5 620,225.5</av:PointCollection>
+                                          <av:PointCollection x:Key="ConnectorLocation">1050,315.5 1050,365.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message - Downloaded All File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Downloaded All File From Web and moved to input file.&quot;]">
+                                      <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Jamnagar Hazira Baroda Nagothane – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="666179a9-3372-41af-84c8-c467675275e4" Version="V2" WindowResize="Maximize">
+                                        <uix:NApplicationCard.Body>
+                                          <ActivityAction x:TypeArguments="x:Object">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                            </ActivityAction.Argument>
+                                          </ActivityAction>
+                                        </uix:NApplicationCard.Body>
+                                        <uix:NApplicationCard.TargetApp>
+                                          <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="291b43332571eb11f853105ce05aba9d.png" Selector="&lt;html app='chrome.exe' url='https://resindistributors.com/jamnagar-hazira-baroda-nagothane/' /&gt;" Url="[strJamnagarURL]" />
+                                        </uix:NApplicationCard.TargetApp>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                      </ui:LogMessage>
+                                      </uix:NApplicationCard>
                                       <FlowStep.Next>
-                                        <x:Reference>__ReferenceID2</x:Reference>
+                                        <FlowStep x:Name="__ReferenceID10">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">950,365.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">1050,416.5 1050,530</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message - Downloaded All File" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Downloaded All File From Web and moved to input file.&quot;]">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </ui:LogMessage>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID18">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">919,530</av:Point>
+                                                  <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">919,560 620,560 620,255.5</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign DisplayName="Assign - strURLName" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strURLName]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[strJamnagarURL]</InArgument>
+                                                </Assign.Value>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Assign>
+                                              <FlowStep.Next>
+                                                <x:Reference>__ReferenceID2</x:Reference>
+                                              </FlowStep.Next>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
                                       </FlowStep.Next>
                                     </FlowStep>
-                                  </FlowStep.Next>
-                                </FlowStep>
-                              </FlowDecision.False>
-                            </FlowDecision>
-                          </FlowStep.Next>
-                        </FlowStep>
-                      </FlowDecision.False>
-                    </FlowDecision>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowDecision.False>
+                        </FlowDecision>
+                      </FlowStep.Next>
+                    </FlowStep>
                   </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
@@ -894,9 +930,9 @@
     <FlowStep x:Name="__ReferenceID16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">120,7</av:Point>
+          <av:Point x:Key="ShapeLocation">220,0</av:Point>
           <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">220,73 220,103 255.5,103 255.5,136.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">320,66 320,96 255.5,96 255.5,196.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Sequence - Initialization Resin Product" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
@@ -905,7 +941,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: RELENE PE – LLDPE / HDPE / LDPE – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="434,271" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="033b426d-a013-4b23-8fa0-4d016e355949" Version="V2">
+        <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: RELENE PE – LLDPE / HDPE / LDPE – Resin Agency Llp" sap:VirtualizedContainerService.HintSize="434,231" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="033b426d-a013-4b23-8fa0-4d016e355949" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -914,7 +950,7 @@
             </ActivityAction>
           </uix:NApplicationCard.Body>
           <uix:NApplicationCard.TargetApp>
-            <uix:TargetApp Area="-8, -8, 1456, 876" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="ec2591a34588c84fc4176c654dd884b0.png" Selector="&lt;html app='chrome.exe' title='RELENE PE – LLDPE / HDPE / LDPE – Resin Agency Llp' /&gt;" Url="https://resindistributors.com/relene-pe-lldpe-hdpe-ldpe/" />
+            <uix:TargetApp Area="-8, -8, 1456, 876" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="ec2591a34588c84fc4176c654dd884b0.png" Selector="&lt;html app='chrome.exe' title='RELENE PE – LLDPE / HDPE / LDPE – Resin Agency Llp' /&gt;" Url="[strReleneURL]" />
           </uix:NApplicationCard.TargetApp>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -959,5 +995,63 @@
     <x:Reference>__ReferenceID13</x:Reference>
     <x:Reference>__ReferenceID14</x:Reference>
     <x:Reference>__ReferenceID15</x:Reference>
+    <FlowStep x:Name="__ReferenceID19">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">0,134.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">100,134.5 100,33 220,33</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign sap2010:Annotation.AnnotationText="Before Starting Kindly Update All Paths and URL over here" DisplayName="Multiple Assign - All Dynamic Values" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[strReleneURL]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">["https://resindistributors.com/relene-pe-lldpe-hdpe-ldpe/"]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[strDownloadPath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">C:\Users\LENOVO\Downloads</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[strMovedownloadedFilePath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">["C:\Users\LENOVO\Documents\UiPath\MumbaiExtraction\Input"]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[strJamnagarURL]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">["https://resindistributors.com/jamnagar-hazira-baroda-nagothane/"]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID16</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID17</x:Reference>
+    <x:Reference>__ReferenceID18</x:Reference>
   </Flowchart>
 </Activity>
