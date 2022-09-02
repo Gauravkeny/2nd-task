@@ -448,11 +448,8 @@
                           <av:PointCollection x:Key="ConnectorLocation">620,204.5 620,174.5 615.641666666667,174.5 615.641666666667,124.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Read and Extract workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Read and Extract.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Read and Extract workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Read and Extract.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strPdfName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPDF_Name" />
-                          </InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_strURLName">
                             <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strURLName" />
                           </InArgument>
@@ -608,7 +605,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">800,431.5 800,477</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Sequence - Download File" sap:VirtualizedContainerService.HintSize="939,2020" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                          <Sequence DisplayName="Sequence - Download File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="strPDF_Name" />
                                               <Variable x:TypeArguments="x:String" Name="strFolderPath" />
