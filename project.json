@@ -3,6 +3,8 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
+    "FestSystems.PDFtoExcel.Activities": "[1.0.1]",
+    "sautinsoft.pdffocus": "[8.4.5.25]",
     "UiPath.Excel.Activities": "[2.12.3]",
     "UiPath.Mail.Activities": "[1.15.2]",
     "UiPath.PDF.Activities": "[3.9.0-preview]",

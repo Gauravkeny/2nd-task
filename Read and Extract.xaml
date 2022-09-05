@@ -76,7 +76,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Read_and_Extract" sap:VirtualizedContainerService.HintSize="665,648" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -144,7 +144,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">130,263 130,293 131,293 131,300</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Sequence - Get Text and Assign value" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <Sequence DisplayName="Sequence - Get Text and Assign value" sap:VirtualizedContainerService.HintSize="376,251" sap2010:WorkflowViewState.IdRef="Sequence_19">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,7 +158,6 @@
                     <InArgument x:TypeArguments="x:String">[Right(AryInputPdfPath(intDirectoryCounter-1).Replace(".pdf",""),10)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[str_dateExtraction]" />
                 <upap:GetPDFPageCount DisplayName="Get PDF Page Count - intNoOfPages" FileName="[AryInputPdfPath(intDirectoryCounter-1)]" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_3" PageCount="[intNoOfPages]" />
               </Sequence>
               <FlowStep.Next>
@@ -219,13 +218,13 @@
                                   <av:PointCollection x:Key="ConnectorLocation">230,578.5 260,578.5 260,580 330,580</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Sequence - Extracting Text and Adding to Data Table" sap:VirtualizedContainerService.HintSize="1432,2813" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                              <Sequence DisplayName="Sequence - Extracting Text and Adding to Data Table" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[strExtractedText.Contains(&quot;Sr.No.&quot;) And strExtractedText.Contains(&quot;Pricing Zone&quot;)]" DisplayName="If - Text contains SR.No and Prizing Zone" sap:VirtualizedContainerService.HintSize="1390,2721" sap2010:WorkflowViewState.IdRef="If_1">
+                                <If Condition="[strExtractedText.Contains(&quot;Sr.No.&quot;)]" DisplayName="If - Text contains SR.No and Prizing Zone" sap:VirtualizedContainerService.HintSize="1809,2561" sap2010:WorkflowViewState.IdRef="If_1">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,7 +232,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <If.Then>
-                                    <Sequence DisplayName="Sequence - Contains Table" sap:VirtualizedContainerService.HintSize="1354,2534" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                    <Sequence DisplayName="Sequence - Contains Table" sap:VirtualizedContainerService.HintSize="1773,2374" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="s:String[]" Default="[New String(2) {&quot;22FA002&quot;,&quot;F19010&quot;,&quot;H350EG&quot;}]" Name="AryRelene" />
                                         <Variable x:TypeArguments="s:String[]" Default="[New String(1) {&quot;H030SG&quot;,&quot;H0350EG&quot;}]" Name="AryJamnagar" />
@@ -244,7 +243,7 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <If Condition="[in_strURLName.Equals(&quot;https://resindistributors.com/jamnagar-hazira-baroda-nagothane/&quot;)]" DisplayName="Jamnagar or Lepo?" sap:VirtualizedContainerService.HintSize="1312,2442" sap2010:WorkflowViewState.IdRef="If_4">
+                                      <If Condition="[in_strURLName.Equals(&quot;https://resindistributors.com/jamnagar-hazira-baroda-nagothane/&quot;)]" DisplayName="Jamnagar or Lepo?" sap:VirtualizedContainerService.HintSize="1731,2282" sap2010:WorkflowViewState.IdRef="If_4">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -252,13 +251,13 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Resin Product" sap:VirtualizedContainerService.HintSize="705,2284" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[AryJamnagar]">
+                                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - Resin Product" sap:VirtualizedContainerService.HintSize="981,2124" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[AryJamnagar]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="x:String">
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="x:String" Name="ResinProduct" />
                                                 </ActivityAction.Argument>
-                                                <Sequence DisplayName="Body - For Each" sap:VirtualizedContainerService.HintSize="669,2160" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                <Sequence DisplayName="Body - For Each" sap:VirtualizedContainerService.HintSize="945,2000" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:Boolean" Name="BoolResinValueExists" />
                                                     <Variable x:TypeArguments="x:String" Name="strPriceValue" />
@@ -269,15 +268,15 @@
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Assign DisplayName="Assign - BoolResinValueExists" sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                  <Assign DisplayName="Assign - BoolResinValueExists" sap:VirtualizedContainerService.HintSize="903,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:Boolean">[BoolResinValueExists]</OutArgument>
                                                     </Assign.To>
                                                     <Assign.Value>
-                                                      <InArgument x:TypeArguments="x:Boolean">[System.Text.RegularExpressions.Regex.IsMatch(strExtractedText,"\s"+ResinProduct+"(\s|\n)")]</InArgument>
+                                                      <InArgument x:TypeArguments="x:Boolean">[System.Text.RegularExpressions.Regex.IsMatch(strExtractedText,"\s"+ResinProduct+"\s")]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <If Condition="[(strExtractedText.Contains(&quot;MUMBAI&quot;) Or strExtractedText.Contains(&quot;Mumbai&quot;)) And BoolResinValueExists]" DisplayName="If - Resin Product and Mumbai Exists" sap:VirtualizedContainerService.HintSize="627,1968" sap2010:WorkflowViewState.IdRef="If_5">
+                                                  <If Condition="[((strExtractedText.Contains(&quot;MUMBAI&quot;)) Or (strExtractedText.Contains(&quot;Mumbai&quot;))) And BoolResinValueExists]" DisplayName="If - Resin Product and Mumbai Exists" sap:VirtualizedContainerService.HintSize="903,1808" sap2010:WorkflowViewState.IdRef="If_5">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,7 +284,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <If.Then>
-                                                      <Sequence DisplayName="Sequence - Value Found" sap:VirtualizedContainerService.HintSize="591,1781" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                                      <Sequence DisplayName="Sequence - Value Found" sap:VirtualizedContainerService.HintSize="867,1621" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                                         <Sequence.Variables>
                                                           <Variable x:TypeArguments="sd:DataTable" Name="DT_Mumbai_extraxted_Data" />
                                                           <Variable x:TypeArguments="sd:DataTable" Name="DT_FinalOp" />
@@ -298,8 +297,8 @@
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:BuildDataTable DataTable="[DT_AppendValue]" DisplayName="Build Data Table - DT_AppendValu" sap:VirtualizedContainerService.HintSize="549,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Low&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;High&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Min&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:long&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bot_x0020_Extraction_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Website_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Page_x0020_No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                                                        <Assign DisplayName="Assign - strPriceValue" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                        <ui:BuildDataTable DataTable="[DT_AppendValue]" DisplayName="Build Data Table - DT_AppendValu" sap:VirtualizedContainerService.HintSize="825,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Low&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;High&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Min&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:long&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bot_x0020_Extraction_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Website_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Page_x0020_No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                                                        <Assign DisplayName="Assign - strPriceValue" sap:VirtualizedContainerService.HintSize="825,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                           </Assign.To>
@@ -307,7 +306,7 @@
                                                             <InArgument x:TypeArguments="x:String">[strExtractedText.Substring(strExtractedText.IndexOf("Sr.No"))]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <Assign DisplayName="Assign - Remove Space of Pricing Zone" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                        <Assign DisplayName="Assign - Remove Space of Pricing Zone" sap:VirtualizedContainerService.HintSize="825,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                           </Assign.To>
@@ -315,7 +314,7 @@
                                                             <InArgument x:TypeArguments="x:String">[strPriceValue.Replace("Pricing Zone","PricingZone")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <Assign DisplayName="Assign - Remove Space of DepotName" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                                        <Assign DisplayName="Assign - Remove Space of DepotName" sap:VirtualizedContainerService.HintSize="825,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                           </Assign.To>
@@ -323,7 +322,7 @@
                                                             <InArgument x:TypeArguments="x:String">[strPriceValue.Replace("Depot Name","DepotName")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <If Condition="[strPriceValue.Contains(&quot;DepotName&quot;)]" DisplayName="If - Value contains PrizinZone" sap:VirtualizedContainerService.HintSize="549,910" sap2010:WorkflowViewState.IdRef="If_6">
+                                                        <If Condition="[strPriceValue.Contains(&quot;DepotName&quot;)]" DisplayName="If - Value contains PrizinZone" sap:VirtualizedContainerService.HintSize="825,750" sap2010:WorkflowViewState.IdRef="If_6">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -331,7 +330,7 @@
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <If.Then>
-                                                            <Sequence DisplayName="Sequence - DoesNot Contains Pricing Zone" sap:VirtualizedContainerService.HintSize="304,752" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                            <Sequence DisplayName="Sequence - DoesNot Contains Pricing Zone" sap:VirtualizedContainerService.HintSize="304,434" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                                               <Sequence.Variables>
                                                                 <Variable x:TypeArguments="scg:List(x:String)" Name="ListFirstLine" />
                                                                 <Variable x:TypeArguments="x:Int32" Name="intResinNo" />
@@ -345,55 +344,75 @@
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <Assign DisplayName="Assign - Get The First Line" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                                              <Assign DisplayName="Assign - Replace Depot/CS Location" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
                                                                 <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strFirstLine]</OutArgument>
+                                                                  <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                                 </Assign.To>
                                                                 <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(0,strPriceValue.IndexOf(Environment.NewLine))]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String">[strPriceValue.Replace("Depot/CS Location","Depot/CSLocation")]</InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
-                                                              <Assign DisplayName="Assign - Spliting First Line By Space" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="scg:List(x:String)">[ListFirstLine]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="scg:List(x:String)">[strFirstLine.Split(" "c).ToList]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - Index Of Current Resin Value" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:Int32">[intResinNo]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:Int32">[ListFirstLine.IndexOf(ResinProduct)]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - strMumbaiLine" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strMumbai]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(strPriceValue.indexOf("Mumbai"))]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - strMumbaiLine" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strMumbaiLine]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strMumbai.Substring(0,strMumbai.IndexOf(Environment.NewLine))]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - ListMumbaiLine" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="scg:List(x:String)">[ListMumbaiLine]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="scg:List(x:String)">[strMumbaiLine.Split(" "c).ToList]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - strFinalPriceValue" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                                              <ui:MultipleAssign DisplayName="Multiple Assign - All Values to Get The Final Data" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                                                <ui:MultipleAssign.AssignOperations>
+                                                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[strFirstLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(0,strPriceValue.IndexOf(Environment.NewLine))]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="scg:List(x:String)">[ListFirstLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="scg:List(x:String)">[strFirstLine.Split(" "c).ToList]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[strMumbaiLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(strPriceValue.IndexOf("Mumbai"))]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[strMumbai]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[strMumbaiLine.Substring(0,strMumbaiLine.indexOf(Environment.NewLine))]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="scg:List(x:String)">[ListMumbaiLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="scg:List(x:String)">[strMumbai.split(" "c).ToList]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:Int32">[intResinNo]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:Int32">[ListFirstLine.IndexOf(ResinProduct)]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                  </scg:List>
+                                                                </ui:MultipleAssign.AssignOperations>
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </ui:MultipleAssign>
+                                                              <Assign DisplayName="Assign - strFinalPriceValue" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_32">
                                                                 <Assign.To>
                                                                   <OutArgument x:TypeArguments="x:String">[strFinalPriceValue]</OutArgument>
                                                                 </Assign.To>
@@ -401,25 +420,75 @@
                                                                   <InArgument x:TypeArguments="x:String">[ListMumbaiLine(intResinNo-2)]</InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
-                                                            </Sequence>
-                                                          </If.Then>
-                                                          <If.Else>
-                                                            <Sequence DisplayName="Sequence - PricingZone" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators=" " DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Generate Data Table - DT_Mumbai_extraxted_Data" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" Input="[strPriceValue]" UseColumnHeader="True">
+                                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                                                <ui:CommentOut.Body>
+                                                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,492" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators=" " DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Generate Data Table - DT_Mumbai_extraxted_Data" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="GenerateDataTable_3" Input="[strPriceValue]" UseColumnHeader="True">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:GenerateDataTable>
+                                                                    <ui:FilterDataTable DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Filter Data Table - Filter that particular Value" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[DT_FinalOp]" SelectColumnsMode="Keep">
+                                                                      <ui:FilterDataTable.Filters>
+                                                                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                                                            <ui:FilterOperationArgument.Column>
+                                                                              <InArgument x:TypeArguments="x:String">["PricingZone"]</InArgument>
+                                                                            </ui:FilterOperationArgument.Column>
+                                                                            <ui:FilterOperationArgument.Operand>
+                                                                              <InArgument x:TypeArguments="x:String">["MUMBAI"]</InArgument>
+                                                                            </ui:FilterOperationArgument.Operand>
+                                                                          </ui:FilterOperationArgument>
+                                                                        </scg:List>
+                                                                      </ui:FilterDataTable.Filters>
+                                                                      <ui:FilterDataTable.SelectColumns>
+                                                                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                                                          <InArgument x:TypeArguments="x:String">[ResinProduct]</InArgument>
+                                                                        </scg:List>
+                                                                      </ui:FilterDataTable.SelectColumns>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:FilterDataTable>
+                                                                  </Sequence>
+                                                                </ui:CommentOut.Body>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
+                                                              </ui:CommentOut>
+                                                            </Sequence>
+                                                          </If.Then>
+                                                          <If.Else>
+                                                            <Sequence DisplayName="Sequence - PricingZone" sap:VirtualizedContainerService.HintSize="476,592" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators=" " DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Generate Data Table - DT_Mumbai_extraxted_Data" sap:VirtualizedContainerService.HintSize="434,200" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" Input="[strPriceValue]" UseColumnHeader="True">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
                                                               </ui:GenerateDataTable>
-                                                              <ui:FilterDataTable DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Filter Data Table - Filter that particular Value" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[DT_FinalOp]" SelectColumnsMode="Keep">
+                                                              <ui:FilterDataTable DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Filter Data Table - Filter that particular Value" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[DT_FinalOp]" SelectColumnsMode="Keep">
                                                                 <ui:FilterDataTable.Filters>
                                                                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                                                     <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -439,12 +508,12 @@
                                                                 </ui:FilterDataTable.SelectColumns>
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                               </ui:FilterDataTable>
-                                                              <Assign DisplayName="Assign - strFinalPriceValue" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                              <Assign DisplayName="Assign - strFinalPriceValue" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                                                                 <Assign.To>
                                                                   <OutArgument x:TypeArguments="x:String">[strFinalPriceValue]</OutArgument>
                                                                 </Assign.To>
@@ -455,8 +524,8 @@
                                                             </Sequence>
                                                           </If.Else>
                                                         </If>
-                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ResinProduct,&quot; &quot; + str_dateExtraction.Replace(&quot;.&quot;,&quot;-&quot;),&quot;&quot;,&quot;&quot;,&quot;&quot;,Convert.ToInt64(strFinalPriceValue),Now.ToString(&quot;dd-MM-yyyy&quot;),in_strURLName,intPageCounter}]" DataTable="[DT_AppendValue]" DisplayName="Add Data Row - DT_AppendValue " sap:VirtualizedContainerService.HintSize="549,185" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                                                        <ui:AppendRange DataTable="[DT_AppendValue]" DisplayName="Append Range - Each Value 1 by 1" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Sheet1" WorkbookPath="Data\Output.xlsx" />
+                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ResinProduct,&quot; &quot; + str_dateExtraction.Replace(&quot;.&quot;,&quot;-&quot;),&quot;&quot;,&quot;&quot;,&quot;&quot;,Convert.ToInt64(strFinalPriceValue),Now.ToString(&quot;dd-MM-yyyy&quot;),in_strURLName,intPageCounter}]" DataTable="[DT_AppendValue]" DisplayName="Add Data Row - DT_AppendValue " sap:VirtualizedContainerService.HintSize="825,185" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                                                        <ui:AppendRange DataTable="[DT_AppendValue]" DisplayName="Append Range - Each Value 1 by 1" sap:VirtualizedContainerService.HintSize="549,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="Sheet1" WorkbookPath="Data\Output.xlsx" />
                                                       </Sequence>
                                                     </If.Then>
                                                     <If.Else>
@@ -481,13 +550,13 @@
                                           </ui:ForEach>
                                         </If.Then>
                                         <If.Else>
-                                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Resin Product" sap:VirtualizedContainerService.HintSize="562,1425" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[AryRelene]">
+                                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Resin Product" sap:VirtualizedContainerService.HintSize="705,1966" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[AryRelene]">
                                             <ui:ForEach.Body>
                                               <ActivityAction x:TypeArguments="x:String">
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="x:String" Name="ResinProduct" />
                                                 </ActivityAction.Argument>
-                                                <Sequence DisplayName="Body - For Each" sap:VirtualizedContainerService.HintSize="526,1301" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                                <Sequence DisplayName="Body - For Each" sap:VirtualizedContainerService.HintSize="669,1842" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                                   <Sequence.Variables>
                                                     <Variable x:TypeArguments="x:Boolean" Name="BoolResinValueExists" />
                                                     <Variable x:TypeArguments="x:String" Name="strPriceValue" />
@@ -498,7 +567,7 @@
                                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Assign DisplayName="Assign - BoolResinValueExists" sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                  <Assign DisplayName="Assign - BoolResinValueExists" sap:VirtualizedContainerService.HintSize="627,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                                                     <Assign.To>
                                                       <OutArgument x:TypeArguments="x:Boolean">[BoolResinValueExists]</OutArgument>
                                                     </Assign.To>
@@ -506,7 +575,7 @@
                                                       <InArgument x:TypeArguments="x:Boolean">[System.Text.RegularExpressions.Regex.IsMatch(strExtractedText,"\s"+ResinProduct+"\s")]</InArgument>
                                                     </Assign.Value>
                                                   </Assign>
-                                                  <If Condition="[(strExtractedText.Contains(&quot;MUMBAI&quot;) Or strExtractedText.Contains(&quot;Mumbai&quot;)) And BoolResinValueExists]" DisplayName="If - Resin Product and Mumbai Exists" sap:VirtualizedContainerService.HintSize="484,1109" sap2010:WorkflowViewState.IdRef="If_3">
+                                                  <If Condition="[((strExtractedText.Contains(&quot;MUMBAI&quot;)) Or (strExtractedText.Contains(&quot;Mumbai&quot;))) And BoolResinValueExists]" DisplayName="If - Resin Product and Mumbai Exists" sap:VirtualizedContainerService.HintSize="627,1650" sap2010:WorkflowViewState.IdRef="If_3">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -514,7 +583,7 @@
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <If.Then>
-                                                      <Sequence DisplayName="Sequence - Value Found" sap:VirtualizedContainerService.HintSize="376,922" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                                      <Sequence DisplayName="Sequence - Value Found" sap:VirtualizedContainerService.HintSize="591,1463" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                                         <Sequence.Variables>
                                                           <Variable x:TypeArguments="sd:DataTable" Name="DT_Mumbai_extraxted_Data" />
                                                           <Variable x:TypeArguments="sd:DataTable" Name="DT_FinalOp" />
@@ -526,8 +595,8 @@
                                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:BuildDataTable DataTable="[DT_AppendValue]" DisplayName="Build Data Table - DT_AppendValu" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Low&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;High&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Min&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:long&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bot_x0020_Extraction_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Website_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Page_x0020_No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                                                        <Assign DisplayName="Assign - strPriceValue" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                        <ui:BuildDataTable DataTable="[DT_AppendValue]" DisplayName="Build Data Table - DT_AppendValu" sap:VirtualizedContainerService.HintSize="549,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Low&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;High&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Min&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:long&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bot_x0020_Extraction_x0020_Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Website_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Page_x0020_No&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                                                        <Assign DisplayName="Assign - strPriceValue" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                           </Assign.To>
@@ -535,7 +604,7 @@
                                                             <InArgument x:TypeArguments="x:String">[strExtractedText.Substring(strExtractedText.IndexOf("Sr.No"))]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <Assign DisplayName="Assign - Remove Space of Pricing Zone" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                        <Assign DisplayName="Assign - Remove Space of Pricing Zone" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                           </Assign.To>
@@ -543,7 +612,7 @@
                                                             <InArgument x:TypeArguments="x:String">[strPriceValue.Replace("Pricing Zone","PricingZone")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <Assign DisplayName="Assign - Remove Space of DepotName" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                                        <Assign DisplayName="Assign - Remove Space of DepotName" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                           </Assign.To>
@@ -551,15 +620,15 @@
                                                             <InArgument x:TypeArguments="x:String">[strPriceValue.Replace("Depot Name","DepotName")]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <If Condition="[strPriceValue.Contains(&quot;DepotName&quot;)]" DisplayName="If - Value contains PrizinZone" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_7">
+                                                        <If Condition="[strPriceValue.Contains(&quot;DepotName&quot;)]" DisplayName="If - Value contains PrizinZone" sap:VirtualizedContainerService.HintSize="549,592" sap2010:WorkflowViewState.IdRef="If_7">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
                                                           <If.Then>
-                                                            <Sequence DisplayName="Sequence - DoesNot Contains Pricing Zone" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                            <Sequence DisplayName="Sequence - DoesNot Contains Pricing Zone" sap:VirtualizedContainerService.HintSize="304,434" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                                               <Sequence.Variables>
                                                                 <Variable x:TypeArguments="scg:List(x:String)" Name="ListFirstLine" />
                                                                 <Variable x:TypeArguments="x:Int32" Name="intResinNo" />
@@ -570,59 +639,79 @@
                                                               </Sequence.Variables>
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <Assign DisplayName="Assign - Get The First Line" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                                              <Assign DisplayName="Assign - Replace Depot/CS Location" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
                                                                 <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strFirstLine]</OutArgument>
+                                                                  <OutArgument x:TypeArguments="x:String">[strPriceValue]</OutArgument>
                                                                 </Assign.To>
                                                                 <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(0,strPriceValue.IndexOf(Environment.NewLine))]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String">[strPriceValue.Replace("Depot/CS Location","Depot/CSLocation")]</InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
-                                                              <Assign DisplayName="Assign - Spliting First Line By Space" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_24">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="scg:List(x:String)">[ListFirstLine]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="scg:List(x:String)">[strFirstLine.Split(" "c).ToList]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - Index Of Current Resin Value" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:Int32">[intResinNo]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:Int32">[strFirstLine.IndexOf(ResinProduct)]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - strMumbaiLine" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strMumbai]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(strPriceValue.indexOf("Mumbai"))]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - strMumbaiLine" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_27">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:String">[strMumbaiLine]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:String">[strMumbai.Substring(0,strMumbai.IndexOf(Environment.NewLine))]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - ListMumbaiLine" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="scg:List(x:String)">[ListMumbaiLine]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="scg:List(x:String)">[strMumbaiLine.Split(" "c).ToList]</InArgument>
-                                                                </Assign.Value>
-                                                              </Assign>
-                                                              <Assign DisplayName="Assign - strFinalPriceValue" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                                              <ui:MultipleAssign DisplayName="Multiple Assign - All Values to Get The Final Data" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                                                <ui:MultipleAssign.AssignOperations>
+                                                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[strFirstLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(0,strPriceValue.IndexOf(Environment.NewLine))]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="scg:List(x:String)">[ListFirstLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="scg:List(x:String)">[strFirstLine.Split(" "c).ToList]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[strMumbaiLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[strPriceValue.Substring(strPriceValue.IndexOf("Mumbai"))]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[strMumbai]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[strMumbaiLine.Substring(0,strMumbaiLine.indexOf(Environment.NewLine))]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="scg:List(x:String)">[ListMumbaiLine]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="scg:List(x:String)">[strMumbai.split(" "c).ToList]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                                                      <ui:AssignOperation.To>
+                                                                        <OutArgument x:TypeArguments="x:Int32">[intResinNo]</OutArgument>
+                                                                      </ui:AssignOperation.To>
+                                                                      <ui:AssignOperation.Value>
+                                                                        <InArgument x:TypeArguments="x:Int32">[ListFirstLine.IndexOf(ResinProduct)]</InArgument>
+                                                                      </ui:AssignOperation.Value>
+                                                                    </ui:AssignOperation>
+                                                                  </scg:List>
+                                                                </ui:MultipleAssign.AssignOperations>
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </ui:MultipleAssign>
+                                                              <Assign DisplayName="Assign - strFinalPriceValue" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
                                                                 <Assign.To>
                                                                   <OutArgument x:TypeArguments="x:String">[strFinalPriceValue]</OutArgument>
                                                                 </Assign.To>
@@ -630,6 +719,56 @@
                                                                   <InArgument x:TypeArguments="x:String">[ListMumbaiLine(intResinNo-2)]</InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
+                                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                                                <ui:CommentOut.Body>
+                                                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,383" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="True" ColumnSeparators=" " DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Generate Data Table - DT_Mumbai_extraxted_Data" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="GenerateDataTable_4" Input="[strPriceValue]" UseColumnHeader="True">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:GenerateDataTable>
+                                                                    <ui:FilterDataTable DataTable="[DT_Mumbai_extraxted_Data]" DisplayName="Filter Data Table - Filter that particular Value" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[DT_FinalOp]" SelectColumnsMode="Keep">
+                                                                      <ui:FilterDataTable.Filters>
+                                                                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                                                            <ui:FilterOperationArgument.Column>
+                                                                              <InArgument x:TypeArguments="x:String">["PricingZone"]</InArgument>
+                                                                            </ui:FilterOperationArgument.Column>
+                                                                            <ui:FilterOperationArgument.Operand>
+                                                                              <InArgument x:TypeArguments="x:String">["MUMBAI"]</InArgument>
+                                                                            </ui:FilterOperationArgument.Operand>
+                                                                          </ui:FilterOperationArgument>
+                                                                        </scg:List>
+                                                                      </ui:FilterDataTable.Filters>
+                                                                      <ui:FilterDataTable.SelectColumns>
+                                                                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                                                          <InArgument x:TypeArguments="x:String">[ResinProduct]</InArgument>
+                                                                        </scg:List>
+                                                                      </ui:FilterDataTable.SelectColumns>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:FilterDataTable>
+                                                                  </Sequence>
+                                                                </ui:CommentOut.Body>
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </ui:CommentOut>
                                                             </Sequence>
                                                           </If.Then>
                                                           <If.Else>
@@ -684,8 +823,8 @@
                                                             </Sequence>
                                                           </If.Else>
                                                         </If>
-                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ResinProduct,&quot; &quot; + str_dateExtraction.Replace(&quot;.&quot;,&quot;-&quot;),&quot;&quot;,&quot;&quot;,&quot;&quot;,Convert.ToInt64(strFinalPriceValue),Now.ToString(&quot;dd-MM-yyyy&quot;),in_strURLName,intPageCounter}]" DataTable="[DT_AppendValue]" DisplayName="Add Data Row - DT_AppendValue " sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                                                        <ui:AppendRange DataTable="[DT_AppendValue]" DisplayName="Append Range - Each Value 1 by 1" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="Data\Output.xlsx" />
+                                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ResinProduct,&quot; &quot; + str_dateExtraction.Replace(&quot;.&quot;,&quot;-&quot;),&quot;&quot;,&quot;&quot;,&quot;&quot;,Convert.ToInt64(strFinalPriceValue),Now.ToString(&quot;dd-MM-yyyy&quot;),in_strURLName,intPageCounter}]" DataTable="[DT_AppendValue]" DisplayName="Add Data Row - DT_AppendValue " sap:VirtualizedContainerService.HintSize="549,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                                                        <ui:AppendRange DataTable="[DT_AppendValue]" DisplayName="Append Range - Each Value 1 by 1" sap:VirtualizedContainerService.HintSize="549,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="Data\Output.xlsx" />
                                                       </Sequence>
                                                     </If.Then>
                                                     <If.Else>
