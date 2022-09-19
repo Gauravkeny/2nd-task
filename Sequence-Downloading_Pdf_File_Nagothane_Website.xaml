@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence_Downloading_Pdf_File_Nagothane_Website" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="643,1487" sap2010:WorkflowViewState.IdRef="Sequence_Downloading_Pdf_File_Nagothane_Website_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence_Downloading_Pdf_File_Nagothane_Website" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1487</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Sequence_Downloading_Pdf_File_Nagothane_Website_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -102,7 +110,7 @@
                 <OutArgument x:TypeArguments="x:String">[strNagoThaneURL]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">https://resindistributors.com/jamnagar-hazira-baroda-nagothane/</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_Config("NagoThaneURL").ToString]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -110,7 +118,7 @@
                 <OutArgument x:TypeArguments="x:String">[strBrowser]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">chrome</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_Config("Browser").ToString]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -118,7 +126,7 @@
                 <OutArgument x:TypeArguments="x:String">[strDownloadsPath]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">["C:\Users\LENOVO\Downloads"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_Config("DownLoadPath").ToString]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -126,7 +134,7 @@
                 <OutArgument x:TypeArguments="x:String">[strNagoThanePath]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">Input\jamnagar-hazira-baroda-nagothane</InArgument>
+                <InArgument x:TypeArguments="x:String">[in_Config("NagoThaneFolderPath").ToString]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -174,7 +182,7 @@
           </Assign>
         </If.Else>
       </If>
-      <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While - Increment &lt;= 31" sap:VirtualizedContainerService.HintSize="569,625" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+      <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[intCounter &lt;= intTodaysDate]" DisplayName="While - Increment &lt;= 31" sap:VirtualizedContainerService.HintSize="569,625" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
         <ui:InterruptibleWhile.Body>
           <Sequence DisplayName="Body - Running While Loop" sap:VirtualizedContainerService.HintSize="376,460" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
@@ -490,9 +498,6 @@
             </Assign>
           </Sequence>
         </ui:InterruptibleWhile.Body>
-        <ui:InterruptibleWhile.Condition>
-          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="intCounter &lt;= intTodaysDate" />
-        </ui:InterruptibleWhile.Condition>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
