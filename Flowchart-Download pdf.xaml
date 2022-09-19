@@ -605,7 +605,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">800,431.5 800,477</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Sequence - Download File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                          <Sequence sap2010:Annotation.AnnotationText="Download file and move it to project input folder" DisplayName="Sequence - Download File" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="strPDF_Name" />
                                               <Variable x:TypeArguments="x:String" Name="strFolderPath" />
@@ -614,6 +614,7 @@
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="innerText" DisplayName="Get Attribute 'Inner Text for Pdf File'" sap:VirtualizedContainerService.HintSize="897,202" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
@@ -997,7 +998,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">0,134.5</av:Point>
           <av:Size x:Key="ShapeSize">200,51</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">100,134.5 100,33 220,33</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">200,160 230,160 230,104.5 200,104.5 200,33 220,33</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:MultipleAssign sap2010:Annotation.AnnotationText="Before Starting Kindly Update All Paths and URL over here" DisplayName="Multiple Assign - All Dynamic Values" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
